@@ -70,7 +70,7 @@ object Application extends Controller with controllers.Filters {
     /**
      * Index Action
      */
-    def index = {
+    def index = time("index") {
         views.Application.html.index(filters)
     }
 
@@ -86,9 +86,11 @@ object Geo extends Controller with controllers.Filters {
     /**
      * Map Overlay
      */
-    def mapOverlay = jsonify {
-        implicit val searchWith = filters
-        Site mapOverlay
+    def mapOverlay = time("mapOverlay") {
+        jsonify {
+            implicit val searchWith = filters
+            Site mapOverlay
+        }
     }
 
 }

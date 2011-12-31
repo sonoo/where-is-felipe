@@ -43,24 +43,6 @@ case class SearchFilters(var ne: Option[Double], var sw: Option[Double], var nw:
     def geohashSuffix: String = geohashPrecision toString
 
     /**
-     * Check
-     */
-    def check(param: Option[List[String]], value: String) = {
-        please log "Checkbox - List: " + param + ", Value: " + value
-        please log "Method: " + Request.current().method + ", Query String: " + Request.current().querystring
-        if (Request.current().method == "GET" && StringUtils.isBlank(Request.current().querystring)) {
-            "checked"
-        } else {
-            val list = param.getOrElse(List[String]()).filter(_ == value).map(c => "checked")
-            if (list.isEmpty) {
-                ""
-            } else {
-                list.head
-            }
-        }
-    }
-
-    /**
      * Has Bounds
      */
     def hasBounds: Boolean = {
@@ -79,29 +61,25 @@ case class SearchFilters(var ne: Option[Double], var sw: Option[Double], var nw:
      */
     def toQueryString = {
         // Start
-        val sb = new StringBuilder
+        val queryString = new StringBuilder
 
         // Map Bounds
         if (hasBounds) {
-            sb append "ne=" append ne
-            sb.append("&")
-            sb append "sw=" append sw
-            sb.append("&")
-            sb append "nw=" append nw
-            sb.append("&")
-            sb append "se=" append se
-            sb.append("&")
+            queryString append "ne=" append ne append "&"
+            queryString append "sw=" append sw append "&"
+            queryString append "nw=" append nw append "&"
+            queryString append "se=" append se append "&"
         }
 
         // Zoom
         zoom match {
-            case Some(s) => sb.append("zoom=").append(s).append("&")
+            case Some(s) => queryString append "zoom=" append s append "&"
             case _ => please log "No zoom level defined!"
         }
 
         // Log Debug
-        please log "Query String: " + sb.toString
-        sb.toString
+        please log "Query String: " + queryString
+        queryString.toString
     }
 
 }

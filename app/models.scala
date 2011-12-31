@@ -176,7 +176,7 @@ object Site extends Magic[Site] {
         please log "Map Markers: " + list.size
 
         // Return List
-        list.filter(_ != null).take(1000)
+        list
     }
 
     /**

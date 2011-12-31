@@ -11,6 +11,10 @@ import org.joda.time.Months
 import java.net.URLEncoder
 import java.text.SimpleDateFormat
 import org.apache.commons.lang.StringUtils
+import play.Logger
+import org.joda.time.DateTime
+import java.util.Date
+import java.sql.Timestamp
 
 /**
  * Helper Object
@@ -39,6 +43,39 @@ object please {
     }
 
     /**
+     * Time Execution
+     */
+    def time[T](identifier: String = "n/a")(runnable: => T): T = {
+        throwOnError {
+            // Define Search Start Time
+            val started = new Date
+
+            // Execute Action
+            val results: T = runnable
+
+            // Define Duration Time
+            logOnError[Unit] {
+                val ended = new Date
+                val duration = ended.getTime - started.getTime
+                Logger.info("Runnable: " + identifier + ", Duration: " + duration + "ms (" + (duration / 1000.0) + "s)")
+            }
+
+            // Return Results
+            results
+        }
+    }
+
+    /**
+     * Now
+     */
+    def now = new Date()
+
+    /**
+     * Current Time
+     */
+    def currentTime = now.getTime
+
+    /**
      * Log
      */
     def log(any: String) = Logger info any
@@ -62,6 +99,33 @@ object please {
      * Multi Values
      */
     def multiValues(values: Iterable[String]) = values.mkString("'", "','", "'")
+
+    /**
+     * Log If Error
+     */
+    def logOnError[T](runnable: => T): Option[T] = {
+        try {
+            Some(runnable)
+        } catch {
+            case error: Throwable =>
+                please report error
+                None
+        }
+    }
+
+    /**
+     * Throw if Error
+     */
+    def throwOnError[T](runnable: => T): T = {
+        try {
+            runnable
+        } catch {
+            case error: Throwable => {
+                please report error
+                throw new RuntimeException(error fillInStackTrace)
+            }
+        }
+    }
 
     /**
      * URL Encode

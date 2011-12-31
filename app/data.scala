@@ -2,6 +2,7 @@ package dtos
 
 import scala.collection.JavaConversions._
 import scala.collection.JavaConversions
+import org.apache.lucene.spatial.geohash.GeoHashUtils
 
 /**
  * Map Marker
@@ -28,7 +29,7 @@ object MapCluster {
      * Constructor
      */
     def apply(geohash: String, count: Long): MapCluster = {
-        val coords = org.apache.lucene.spatial.geohash.GeoHashUtils.decode(geohash)
+        val coords = GeoHashUtils decode geohash
         new MapCluster(geohash, count, coords(0), coords(1))
     }
 
