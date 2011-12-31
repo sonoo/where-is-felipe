@@ -1,0 +1,10 @@
+# Application dependencies
+
+require:
+    - play
+    - play -> scala 0.9.1
+    - postgresql -> postgresql 9.0-801.jdbc4
+    - net.liftweb -> lift-json_2.8.1 2.4-M5
+    - net.liftweb -> lift-json-ext_2.8.1 2.4-M5
+    - com.thoughtworks.paranamer -> paranamer-maven-plugin 2.2.1
+    - org.apache.lucene -> lucene-spatial 2.9.3

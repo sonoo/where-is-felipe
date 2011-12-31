@@ -1,0 +1,14 @@
+*.iml
+lib
+modules
+.externalToolBuilders
+.settings
+.classpath
+eclipse
+.project
+*.pyc
+tmp
+target
+*.ipr
+*.iws
+logs
