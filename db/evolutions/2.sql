@@ -285,12 +285,7 @@ INSERT INTO "site" VALUES ('1201 BROADWAY', 'BUFFALO', 'NY', '14212', 'ERIE', '4
 INSERT INTO "site" VALUES ('160 WEST 71ST STREET', 'NEW YORK', 'NY', '10023', 'NEW YORK', '40.77737037', '-73.98149537', '0', null, null, 'dr5rux236hyc07mshhnjvd0');
 INSERT INTO "site" VALUES ('LIVINGSTON AVENUE PSE&G TOWER #2/2 (ROSELAND - WEST ORANGE)', 'Livingston', 'NJ', '7039', '', '40.8122', '74.3119', '0', null, null, 'txkb5j8k2c2zcnh5yruq44z');
 INSERT INTO "site" VALUES ('900 ATLANTIC AVENUE', 'BROOKLYN', 'NY', '11238', 'KINGS', '40.68109722', '-73.96516204', '0', null, null, 'dr5rkvu0wf1v2uetbbpm1h0');
-INSERT INTO "site" VALUES ('154-E_87ST', 'NEW YORK', 'NY', '10128', 'New York', '40.779821', '-73.95486', '0', null, null, 'dr5rvpexwvee9jge273g9b0');
-INSERT INTO "site" VALUES ('105 Grove Street', 'Elizabeth', 'NJ', '7201', '', '40.662556', '-74.228833', '0', null, null, 'dr5pqfkhwcf6wwwpvenv50z');
-INSERT INTO "site" VALUES ('100 WEST MAIN STREET', 'ILION', 'NY', '13357', '', '43.0174', '-75.0387', '0', null, null, 'drdssrn6x89f76eev6ykb2b');
-INSERT INTO "site" VALUES ('TURK HILL ROAD @ INTERSTATE 684; (VZ CIRCUIT ADDRESS 260 DEANS CORNER ROAD)', 'BREWSTER', 'NY', '10509', '', '41.372361111', '-73.613433333', '0', null, null, 'dr7ekgs76xjensnb4fnsubz');
-INSERT INTO "site" VALUES ('131-13', 'Kew Gardens', 'NY', '11418', 'Queens', '40.705103', '-73.82152', '0', null, null, 'dr5x84hu3vjj3qqn9m79nnz');
-INSERT INTO "site" VALUES ('30-10 41ST ST, OFF OF NORTHERN BLVD;                                                          VZ CIRCUIT ADDRESS = 700 CANAL RD, MOUNT SINAI NY', 'TERRYVILLE', 'NY', '11766', '', '40.909818333', '-72.99955', '0', null, null, 'drk0dz7kgny7cx756mdr9fb');
+INSERT INTO "site" VALUES ('154-E_87ST', 'NEW YORK', 'NY', '10128', 'New York', '40.779821', '-73.95486', '0', null, null, 'dr5rvpexwvee9jge273g9b0');                                                      VZ CIRCUIT ADDRESS = 700 CANAL RD, MOUNT SINAI NY', 'TERRYVILLE', 'NY', '11766', '', '40.909818333', '-72.99955', '0', null, null, 'drk0dz7kgny7cx756mdr9fb');
 INSERT INTO "site" VALUES ('40 Morningside Avenue', 'New York', 'NY', '10026', 'New York', '40.806806', '-73.957472', '0', null, null, 'dr72jh9ucgzzkr79d9wv9nb');
 INSERT INTO "site" VALUES ('9200 NIAGARA FALLS BLVD', 'NIAGARA FALLS', 'NY', '14304', '', '43.0951', '-78.957', '0', null, null, 'dpxv5m1r0scsgs7e0jprgc0');
 INSERT INTO "site" VALUES ('229 9th Ave', 'NEW YORK', 'NY', '10001', 'New York', '40.747253', '-74.000869', '0', null, null, 'dr5ru1f1yy2xzxg7w2p6b30');
